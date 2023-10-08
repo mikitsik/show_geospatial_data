@@ -1,5 +1,5 @@
-class Api::V1::RegistersController < Api::BaseController
-  def record_data
+class Api::V1::TicketExcavatorController < Api::BaseController
+  def create_ticket_and_excavator
     data = JSON.parse(request.raw_post)
 
     ActiveRecord::Base.transaction do
