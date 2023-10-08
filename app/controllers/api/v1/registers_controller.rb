@@ -1,10 +1,10 @@
 class Api::V1::RegistersController < Api::BaseController
-  def insert_data
+  def record_data
     data = JSON.parse(request.raw_post)
 
     ActiveRecord::Base.transaction do
-      Ticket.create!(ticket_data(data))
-      Excavator.create!(excavator_data(data))
+      Ticket.create!(data: ticket_data(data))
+      Excavator.create!(data: excavator_data(data))
     end
 
     render json: {message: "Record created successfully"}, status: :ok
