@@ -1,10 +1,13 @@
-class Api::V1::RegistersController < ApplicationController
-  const TICKET_ATTRS = []
-
+class Api::V1::RegistersController < Api::BaseController
   def insert_data
     data = JSON.parse(request.raw_post)
-    ticket_data(data)
-    excavator_data(data)
+
+    ActiveRecord::Base.transaction do
+      Ticket.create!(ticket_data(data))
+      Excavator.create!(excavator_data(data))
+    end
+
+    render json: {message: "Record created successfully"}, status: :ok
   end
 
   private
