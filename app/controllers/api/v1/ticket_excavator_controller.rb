@@ -1,18 +1,25 @@
-class Api::V1::TicketExcavatorController < Api::BaseController
+class Api::V1::TicketExcavatorController < ApplicationController
   def create_ticket_and_excavator
     data = JSON.parse(request.raw_post)
+    wkt_polygon = data.dig(:ExcavationInfo, :DigsiteInfo, :WellKnownText)
+    polygon = RGeo::Cartesian.factory.parse_wkt(wkt_polygon)
 
-    ActiveRecord::Base.transaction do
-      Ticket.create!(data: ticket_data(data))
-      Excavator.create!(data: excavator_data(data))
+    if polygon.valid?
+      ActiveRecord::Base.transaction do
+        Ticket.create!(data: ticket_data(data, wkt_polygon))
+        Excavator.create!(data: excavator_data(data))
+      end
+      render json: {message: "Ticket and Excavator created successfully"}, status: :ok
+    else
+      render json: {errors: [
+        StandardError.new("The polygon is not valid").message
+      ]}, status: :unprocessable_entity
     end
-
-    render json: {message: "Record created successfully"}, status: :ok
   end
 
   private
 
-  def ticket_data(data)
+  def ticket_data(data, wkt_polygon)
     {
       RequestNumber: data[:RequestNumber],
       SequenceNumber: data[:SequenceNumber],
@@ -26,7 +33,7 @@ class Api::V1::TicketExcavatorController < Api::BaseController
         AdditionalServiceAreaCodes: data.dig(:ServiceArea, :AdditionalServiceAreaCodes)
       },
       DigsiteInfo: {
-        WellKnownText: data.dig(:ExcavationInfo, :DigsiteInfo, :WellKnownText)
+        WellKnownText: wkt_polygon
       }
     }
   end
