@@ -1,0 +1,19 @@
+require:
+  - standard
+  - standard-custom
+  - standard-performance
+  - standard-rails
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_gem:
+  standard: config/base.yml
+  standard-performance: config/base.yml
+  standard-custom: config/base.yml
+  standard-rails: config/base.yml
+
+AllCops:
+  DisabledByDefault: false
+  Style/FrozenStringLiteralComment:
+    Enabled: false
