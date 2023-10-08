@@ -25,10 +25,8 @@ class Api::V1::TicketExcavatorController < Api::BaseController
         PrimaryServiceAreaCode: data.dig(:ServiceArea, :PrimaryServiceAreaCode),
         AdditionalServiceAreaCodes: data.dig(:ServiceArea, :AdditionalServiceAreaCodes)
       },
-      ExcavationInfo: {
-        DigsiteInfo: {
-          WellKnownText: data.dig(:ExcavationInfo, :DigsiteInfo, :WellKnownText)
-        }
+      DigsiteInfo: {
+        WellKnownText: data.dig(:ExcavationInfo, :DigsiteInfo, :WellKnownText)
       }
     }
   end
