@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe TicketExcavatorController do
+RSpec.describe Api::V1::TicketExcavatorController do
   describe "POST #create_ticket_and_excavator" do
     def make_request(params)
       post :create_ticket_and_excavator, params: params, as: :json
@@ -53,7 +53,13 @@ RSpec.describe TicketExcavatorController do
       }
     }
 
-    it "test" do
+    it { expect { make_request(params) }.to change(Ticket, :count).by(1) }
+    it { expect { make_request(params) }.to change(Excavator, :count).by(1) }
+
+    context "when polygon is not valid" do
+      let(:wrong_params) { {**params, ExcavationInfo: {DigsiteInfo: {WellKnownText: "test"}}} }
+
+      it { expect { make_request(wrong_params) }.to raise_error(StandardError) }
     end
   end
 end
