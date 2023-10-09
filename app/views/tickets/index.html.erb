@@ -1,0 +1,9 @@
+<!-- app/views/tickets/index.html.erb -->
+<h1>Ticket List</h1>
+<ul>
+  <% @tickets.each do |ticket| %>
+    <li>
+      <%= ticket.id %>: ticket.created_at.strftime("%m-%d-%Y, %H:%M:%S UTC")
+    </li>
+  <% end %>
+</ul>
