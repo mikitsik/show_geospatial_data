@@ -41,7 +41,7 @@ RSpec.describe Api::V1::TicketExcavatorController do
           Contact: {
             Name: "Johnny Doe"
           },
-          CrewOnsite: "true"
+          CrewOnSite: "true"
         },
         ExcavationInfo: {
           TypeOfWork: "rpr man hole tops",
