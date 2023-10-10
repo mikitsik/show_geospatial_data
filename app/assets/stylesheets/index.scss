@@ -1,14 +1,47 @@
 .index {
   &_header {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 30px;
     text-align: center;
   }
 
   .table {
-    padding: 5px;
+    border: 1px gray solid;
+    border-radius: 6px;
+    padding: 15px 10px;
+    box-shadow: -9px 11px 8px -2px rgba(34, 60, 80, 0.17);
 
     &_header {
+      font-size: 1.4rem;
+      font-weight: 600;
       display: flex;
       justify-content: space-around;
+    }
+
+    .ticket {
+      padding: 2px;
+      font-size: 1.3rem;
+
+      &_link {
+        border: 1px gray solid;
+        border-radius: 6px;
+        box-shadow: 0;
+        transition: box-shadow 0.3s;
+        color: black;
+        display: flex;
+        justify-content: space-around;
+        text-decoration: none;
+
+        &:hover {
+          box-shadow: -9px 11px 8px -2px rgba(34, 60, 80, 0.17);
+        }
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
   }
 }
