@@ -1,0 +1,14 @@
+.index {
+  &_header {
+    text-align: center;
+  }
+
+  .table {
+    padding: 5px;
+
+    &_header {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

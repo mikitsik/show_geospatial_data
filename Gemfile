@@ -13,6 +13,7 @@ gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "rgeo"
+gem "sass-rails"
 
 group :development, :test do
   gem "debug"

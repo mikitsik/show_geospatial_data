@@ -1,0 +1,17 @@
+.svg {
+  padding-top: 15px;
+
+  &_container {
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: all 0.7s ease-out;
+
+      .path {
+        fill: blue;
+      }
+    }
+  }
+}
