@@ -14,6 +14,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "rgeo"
 gem "sass-rails"
+gem 'leaflet-rails'
 
 group :development, :test do
   gem "debug"
