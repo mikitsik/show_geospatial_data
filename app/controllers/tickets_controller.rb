@@ -4,6 +4,8 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @ticket = Ticket.includes(:excavator).find(params[:id])
+    @ticket = TicketPresenter.new(
+      Ticket.includes(:excavator).find(params[:id])
+    )
   end
 end
