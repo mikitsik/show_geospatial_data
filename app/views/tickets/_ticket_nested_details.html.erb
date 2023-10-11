@@ -1,0 +1,16 @@
+<table>
+  <tbody>
+    <% data.each do |key, value| %>
+      <tr>
+        <td><%= key %></td>
+        <td>
+          <% if value.is_a?(Hash) %>
+            <%= render partial: "ticket_nested_details", locals: { data: value } %>
+          <% else %>
+            <%= value %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,11 +1,11 @@
 <div class="show">
   <h1 class="show_header">Ticket Details</h1>
-  <%= render "ticket_details" %>
+  <%= render partial: "ticket_nested_details", locals: { data: @ticket.data } %>
 
   <div id="map" class="show_map"></div>
 
   <h1 class="show_header">Excavator Details</h1>
-  <%= render "excavator_details" %>
+  <%= render partial: "excavator_details", locals: { excavator: @ticket.excavator } %>
 </div>
 
 <script>
