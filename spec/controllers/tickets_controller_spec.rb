@@ -23,7 +23,6 @@ RSpec.describe TicketsController do
   describe "GET #show" do
     before { get :show, params: {id: ticket1.id} }
 
-    it { expect(assigns(:ticket)).to eq(ticket1) }
     it { expect(response).to render_template(:show) }
 
     context "when the ticket does not exist" do

@@ -15,6 +15,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "rgeo"
 gem "sass-rails"
 gem "leaflet-rails"
+gem "rgeo-geojson"
 
 group :development, :test do
   gem "debug"

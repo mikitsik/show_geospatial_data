@@ -13,6 +13,14 @@ class TicketPresenter
     ticket.excavator
   end
 
+  def polygon
+    RGeo::GeoJSON.encode(
+      RGeo::Cartesian.factory.parse_wkt(
+        ticket.data["DigsiteInfo"]["WellKnownText"]
+      )
+    )
+  end
+
   def created_at
     ticket.created_at
   end
