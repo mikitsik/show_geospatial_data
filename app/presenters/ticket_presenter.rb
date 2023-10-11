@@ -6,7 +6,7 @@ class TicketPresenter
   end
 
   def data
-    ticket.data
+    ticket.data.delete("DigsiteInfo")
   end
 
   def excavator
@@ -18,7 +18,7 @@ class TicketPresenter
       RGeo::Cartesian.factory.parse_wkt(
         ticket.data["DigsiteInfo"]["WellKnownText"]
       )
-    )
+    )["coordinates"][0]
   end
 
   def created_at

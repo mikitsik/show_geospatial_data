@@ -1,23 +1,23 @@
 <div class="show">
   <h1 class="show_header">Ticket Details</h1>
-  <%= render 'ticket_details' %>
+  <%= render "ticket_details" %>
 
   <div id="map" class="show_map"></div>
 
   <h1 class="show_header">Excavator Details</h1>
-  <%= render 'excavator_details' %>
+  <%= render "excavator_details" %>
 </div>
 
 <script>
-  var coordinates = <%= raw @ticket.polygon.to_json %>.coordinates[0]
-  var map = L.map('map').setView(coordinates[0], 8);
+  var coordinates = <%= raw @ticket.polygon.to_json %>
+  var map = L.map("map").setView(coordinates[0], 8);
   var polygon = L.polygon(coordinates).addTo(map);
   polygon.bindPopup(
     `<b>Excavator:</b><br>
     <b>${<%= raw @ticket.excavator.data.to_json %>["CompanyName"]}</b>`
   ).openPopup();
 
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19
   }).addTo(map);
 </script>

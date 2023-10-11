@@ -1,4 +1,6 @@
 class Api::V1::TicketExcavatorController < ApplicationController
+  ADDRESS_FIELDS = ["Address", "City", "State", "Zip"].freeze
+
   def create_ticket_and_excavator
     data = JSON.parse(request.raw_post)
     wkt_polygon = data.dig("ExcavationInfo", "DigsiteInfo", "WellKnownText")
@@ -50,6 +52,6 @@ class Api::V1::TicketExcavatorController < ApplicationController
   end
 
   def excavator_address(data)
-    ["Address", "City", "State", "Zip"].map { |attr| data.dig("Excavator", attr) }.join(", ")
+    ADDRESS_FIELDS.map { |attr| data.dig("Excavator", attr) }.join(", ")
   end
 end
