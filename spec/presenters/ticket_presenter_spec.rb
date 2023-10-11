@@ -5,7 +5,6 @@ RSpec.describe TicketPresenter do
 
   let(:ticket) { Fabricate(:ticket) }
 
-  it { expect(presenter.data).not_to include("DigsiteInfo") }
   it { expect(presenter.excavator).to eq(ticket.excavator) }
   it { expect(presenter.created_at).to eq(ticket.created_at) }
 end

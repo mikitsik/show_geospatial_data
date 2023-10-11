@@ -6,7 +6,7 @@ class TicketPresenter
   end
 
   def data
-    ticket.data.delete("DigsiteInfo")
+    ticket.data.except("DigsiteInfo")
   end
 
   def excavator
