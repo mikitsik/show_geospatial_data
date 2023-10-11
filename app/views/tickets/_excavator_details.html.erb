@@ -1,0 +1,14 @@
+<div class="table">
+  <div class="table_row">
+    <div class="table_property">Company Name:</div>
+    <div class="table_data"><%= @ticket.excavator.data["CompanyName"] %></div>
+  </div>
+  <div class="table_row">
+    <div class="table_property">Address:</div>
+    <div class="table_data"><%= @ticket.excavator.data["Address"] %></div>
+  </div>
+  <div class="table_row">
+    <div class="table_property">Crew On Site:</div>
+    <div class="excavator_status <%= @ticket.excavator.data['CrewOnSite'] ? 'green' : 'gray' %>"></div>
+  </div>
+</div>

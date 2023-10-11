@@ -1,3 +1,9 @@
-#map {
-  height: 400px;
+.show {
+  &_header {
+    text-align: center;
+  }
+
+  &_map {
+    height: 600px;
+  }
 }
