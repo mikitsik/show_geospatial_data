@@ -1,4 +1,3 @@
-require "rgeo"
 require_relative "../support/generators/polygonable"
 
 Fabricator(:ticket) do
