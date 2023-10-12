@@ -1,7 +1,7 @@
 databases:
   - name: show_geospatial_data
-    databaseName: show_geospatial_data_bju7
-    user: show_geospatial_data_bju7_user
+    databaseName: show_geospatial_data_d93m
+    user: show_geospatial_data_d93m_user
 
 services:
   - type: web
