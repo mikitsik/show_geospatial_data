@@ -4,7 +4,7 @@
       <div class="nested_td"><%= key %></div>
       <div>
         <% if value.is_a?(Hash) %>
-          <%= render partial: "ticket_nested_details", locals: { data: value } %>
+          <%= render partial: "ticket_details", locals: { data: value } %>
         <% else %>
           <%= value.is_a?(Array) ? value.to_sentence : value %>
         <% end %>
