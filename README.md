@@ -13,3 +13,4 @@ The App is designed to receive geospatial data and provide a user-friendly inter
 - improve rubocop settings
 - improve polygonable module
 - add better debug gems for development
+- write capybara tests
