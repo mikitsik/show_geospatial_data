@@ -6,7 +6,9 @@ class TicketPresenter
   end
 
   def data
-    ticket.data.except("DigsiteInfo")
+    transform(
+      ticket.data.except("DigsiteInfo")
+    )
   end
 
   def excavator
@@ -23,5 +25,16 @@ class TicketPresenter
 
   def created_at
     ticket.created_at
+  end
+
+  private
+
+  def transform(hash)
+    change_item = ->(item) { item.is_a?(Array) ? item.join(", ") : item.gsub(/(?<=[a-z])(?=[A-Z])/, " ") }
+    hash.each_with_object({}) do |(key, value), result|
+      new_key = change_item.call(key)
+      new_value = value.is_a?(Hash) ? transform(value) : change_item.call(value)
+      result[new_key] = new_value
+    end
   end
 end
