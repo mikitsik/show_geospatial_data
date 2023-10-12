@@ -1,9 +1,30 @@
 .show {
-  &_header {
-    text-align: center;
-  }
-
   &_map {
     height: 600px;
+  }
+
+  .table {
+    &_header {
+      text-align: center;
+    }
+
+    &_row {
+      border-bottom: 1px gray solid;
+      display: flex;
+      padding: 2px;
+    }
+
+    &_cell {
+      align-self: center;
+      border-right: 1px gray solid;
+      flex: 1;
+      padding: 4px;
+    }
+
+    .green {
+      color: green;
+      font-weight: 600;
+      background-color: blanchedalmond;
+    }
   }
 }
