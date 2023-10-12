@@ -5,7 +5,7 @@ databases:
 
 services:
   - type: web
-    name: show_geospatial_data_7b2z
+    name: show_geospatial_data
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
