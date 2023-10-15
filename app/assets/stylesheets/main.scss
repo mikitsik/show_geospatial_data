@@ -6,4 +6,18 @@
     max-width: 1024px;
     padding-bottom: 70px;
   }
+
+  &_header {
+    margin: 0 auto;
+    width: 65%;
+
+    @media (max-width: 768px) {
+      width: 85%;
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+
+  }
 }

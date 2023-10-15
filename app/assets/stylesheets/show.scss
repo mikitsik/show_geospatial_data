@@ -3,11 +3,19 @@
     height: 600px;
   }
 
-  .table {
-    &_header {
-      text-align: center;
+  &_header {
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
     }
 
+    @media (max-width: 480px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .table {
     &_row {
       border-bottom: 1px gray solid;
       display: flex;
