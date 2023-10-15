@@ -1,3 +1,6 @@
+<div class="button button_about">
+  <%= link_to "About", about_path %>
+</div>
 <div class="show">
   <h1 class="show_header">Ticket Details</h1>
   <%= render partial: "details", locals: { data: @ticket.data } %>
@@ -6,9 +9,9 @@
 
   <h1 class="show_header">Excavator Details</h1>
   <%= render partial: "details", locals: { data: @ticket.excavator.data } %>
-  <button class="show_button">
-    <%= link_to "Back", root_path %>
-  </button>
+  <div class="button  button_back">
+    <%= link_to "Main", root_path %>
+  </div>
 </div>
 
 <script>

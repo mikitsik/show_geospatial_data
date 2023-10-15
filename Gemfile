@@ -16,6 +16,7 @@ gem "rgeo"
 gem "sass-rails"
 gem "leaflet-rails"
 gem "rgeo-geojson"
+gem "redcarpet"
 
 group :development, :test do
   gem "debug"
