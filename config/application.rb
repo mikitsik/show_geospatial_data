@@ -24,10 +24,6 @@ module ShowGeospatialData
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Enable frozen string literals in all Ruby files to avoid each one
-    # having Rubocop's "# frozen_string_literal: true"
-    config.freeze_string_literals = true
-
     # Disabled CSRF Protection for Testing
     config.action_controller.allow_forgery_protection = false
   end
