@@ -1,0 +1,13 @@
+.about {
+  p, ul {
+    font-size: 1.3rem;
+    letter-spacing: 0.2px;
+
+    code {
+      display: block;
+      overflow: scroll;
+      background-color: rgb(226, 225, 225);
+      font-size: 1rem;
+    }
+  }
+}

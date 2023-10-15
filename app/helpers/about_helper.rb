@@ -1,6 +1,7 @@
 module AboutHelper
   def render_markdown(content)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+    content.gsub!(/^# (.*?)$/, "## About the app:")
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
     markdown.render(content).html_safe
   end
 end
