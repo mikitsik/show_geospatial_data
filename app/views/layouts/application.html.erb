@@ -14,10 +14,9 @@
   <body>
     <div class="main">
       <div class="main_container">
-        <div class="main_header">
-          <%= render partial: "shared/header" %>
-        </div>
+        <%= render partial: "shared/header" %>
         <%= yield %>
+        <%= render partial: "shared/footer" %>
       </div>
     <div>
   </body>

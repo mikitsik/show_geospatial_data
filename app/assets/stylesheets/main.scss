@@ -18,6 +18,18 @@
     @media (max-width: 480px) {
       width: 100%;
     }
+  }
 
+  &_footer {
+    text-align: center;
+    margin-top: 80px;
+
+    a {
+      text-decoration: none;
+
+      &:active, &:visited {
+        color: blue;
+      }
+    }
   }
 }
