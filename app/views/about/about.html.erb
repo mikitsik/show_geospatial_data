@@ -1,6 +1,27 @@
 <div class="about">
   <%= render_markdown(@about_content) %>
 </div>
-<div class="button button_back">
+<button class="button button_back">
   <%= link_to "Main", root_path %>
-</div>
+</button>
+
+<script>
+  const copyButton = document.createElement("button");
+  copyButton.textContent = "Copy to Clipboard";
+  copyButton.classList.add("button_copy");
+  copyButton.addEventListener("click", copyToClipboard);
+
+  const codeContainer = document.querySelector("code");
+  const textToCopy = codeContainer.textContent;
+  codeContainer.appendChild(copyButton);
+
+  function copyToClipboard() {
+    const tempInput = document.createElement("input");
+    tempInput.value = textToCopy;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    copyButton.textContent = "Copied!";
+  }
+</script>

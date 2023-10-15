@@ -1,5 +1,9 @@
 
 .button {
+  display: block;
+  border: none;
+  background-color: white;
+
   a {
     border: 1px solid gray;
     border-radius: 8px;
@@ -27,5 +31,15 @@
   &_back {
     margin: 70px auto 0;
     text-align: center;
+  }
+
+  &_copy {
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
