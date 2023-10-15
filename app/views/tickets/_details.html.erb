@@ -1,12 +1,10 @@
-
 <div class="table">
-  <h1 class="table_header"><%= header %></h1>
   <% data.each do |key, value| %>
     <div class="table_row">
       <div class="table_cell"><%= key %></div>
       <div class="table_cell <%= key == 'CrewOnSite' && data['CrewOnSite'] && 'green' %>">
         <% if value.is_a?(Hash) %>
-          <%= render partial: "details", locals: { data: value, header: "" } %>
+          <%= render partial: "details", locals: { data: value, recursion: true }%>
         <% else %>
           <%= value.is_a?(Array) ? value.to_sentence : value %>
         <% end %>

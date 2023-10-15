@@ -1,11 +1,11 @@
 <div class="show">
-  <%# <h1 class="show_header">Ticket Details</h1> %>
-  <%= render partial: "details", locals: { data: @ticket.data, header: "Ticket Details" } %>
+  <h1 class="show_header">Ticket Details</h1>
+  <%= render partial: "details", locals: { data: @ticket.data } %>
 
   <div id="map" class="show_map"></div>
 
-  <%# <h1 class="show_header">Excavator Details</h1> %>
-  <%= render partial: "details", locals: { data: @ticket.excavator.data, header: "Excavator Details" } %>
+  <h1 class="show_header">Excavator Details</h1>
+  <%= render partial: "details", locals: { data: @ticket.excavator.data } %>
 </div>
 
 <script>
