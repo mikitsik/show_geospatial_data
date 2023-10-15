@@ -6,6 +6,9 @@
 
   <h1 class="show_header">Excavator Details</h1>
   <%= render partial: "details", locals: { data: @ticket.excavator.data } %>
+  <button class="show_button">
+    <%= link_to "Back", root_path %>
+  </button>
 </div>
 
 <script>
